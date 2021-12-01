@@ -1,6 +1,7 @@
 const request = require("request");
 const express = require("express");
 const paginateResults = require("./utils/pagination");
+const color = require("color");
 const app = express();
 
 app.get("/api/photos", (req, res) => {
@@ -23,4 +24,6 @@ app.get("/api/photos", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`server started on port ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`server started on port ${PORT}`.yellow.bold)
+);
